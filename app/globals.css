@@ -262,6 +262,33 @@ body {
 .lb-score { font-weight: 700; color: var(--caramel); font-size: 1.05rem; flex-shrink: 0; }
 .lb-empty { text-align: center; color: var(--mocha); font-style: italic; padding: 20px; }
 
+/* ── API loading / error ── */
+.loading-text { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.loading-text::after {
+  content: '';
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.api-error {
+  background: #fff8e1; color: #7b5800;
+  border: 1px solid #ffe082; border-radius: 10px;
+  padding: 10px 14px; font-size: .88rem; text-align: center;
+  margin-bottom: 14px; animation: fadeUp .3s ease both;
+}
+
+.api-credit {
+  text-align: center; font-size: .78rem;
+  color: var(--latte); margin-top: 12px;
+}
+.api-credit a { color: var(--caramel); text-decoration: none; }
+.api-credit a:hover { text-decoration: underline; }
+
 /* ── Responsive ── */
 @media (max-width: 520px) {
   .card          { padding: 20px 14px; border-radius: 18px; }
